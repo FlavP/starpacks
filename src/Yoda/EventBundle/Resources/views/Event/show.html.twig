@@ -4,7 +4,7 @@
 
     <section class="event-show">
         <header id="menu">
-            <a class="link" href="{{ path('event_index') }}">&larr; back to the events list</a>
+            <a class="link" href="{{ path('event') }}">&larr; back to the events list</a>
         </header>
 
         <article>
@@ -14,7 +14,7 @@
             <section>
                 <h1>
                     {{ event.name }}
-                    <a class="button" href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                    <a class="button" href="{{ path('edit', {'id': event.id}) }}">edit</a>
                 </h1>
 
                 <dl>

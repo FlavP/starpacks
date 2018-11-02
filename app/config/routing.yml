@@ -2,4 +2,14 @@ event:
     resource: "@EventBundle/Resources/config/routing.yml"
     prefix:   /
 
+login_form:
+    pattern: /login
+    defaults:  { _controller: UserBundle:Security:login }
+
+logout:
+    pattern: /logout
+    defaults:  { _controller: UserBundle:Security:logout }
+
+login_check:
+    pattern:   /login_check
 

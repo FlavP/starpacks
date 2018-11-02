@@ -32,8 +32,8 @@ class EventController extends Controller
     }
 
     /**
-     * Creates a new event entity.
-     *
+     * @Route("/new", name="new")
+     * @Template()
      */
     public function newAction(Request $request)
     {
@@ -49,29 +49,29 @@ class EventController extends Controller
             return $this->redirectToRoute('event_show', array('id' => $event->getId()));
         }
 
-        return $this->render('EventBundle:Event:new.html.twig', array(
+        return array(
             'event' => $event,
             'form' => $form->createView(),
-        ));
+            );
     }
 
     /**
-     * Finds and displays a event entity.
-     *
+     * @Route("/{id}/show", name="show")
+     * @Template()
      */
     public function showAction(Event $event)
     {
         $deleteForm = $this->createDeleteForm($event);
 
-        return $this->render('EventBundle:Event:show.html.twig', array(
+        return array(
             'event' => $event,
             'delete_form' => $deleteForm->createView(),
-        ));
+            );
     }
 
     /**
-     * Displays a form to edit an existing event entity.
-     *
+     * @Route("/{id}/edit", name="edit")
+     * @Template()
      */
     public function editAction(Request $request, Event $event)
     {
@@ -85,16 +85,15 @@ class EventController extends Controller
             return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
         }
 
-        return $this->render('EventBundle:Event:edit.html.twig', array(
+        return array(
             'event' => $event,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        ));
+            );
     }
 
     /**
-     * Deletes a event entity.
-     *
+     * @Route("/{id}/delete", name="delete")
      */
     public function deleteAction(Request $request, Event $event)
     {
@@ -107,7 +106,7 @@ class EventController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('event_index');
+        return $this->redirectToRoute('event');
     }
 
     /**

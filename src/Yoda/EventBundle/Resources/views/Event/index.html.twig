@@ -4,7 +4,12 @@
 
     <section class="events">
         <header id="menu">
-            <a class="button" href="{{ path('event_new') }}">Create new event</a>
+            <a class="button" href="{{ path('new') }}">Create new event</a>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a href="{{ path('logout') }}">Log Out</a>
+            {% else %}
+                <a href="{{ path('logout') }}">Log In</a>
+            {% endif %}
         </header>
 
         {% for event in events %}
@@ -14,7 +19,7 @@
                 </header>
                 <section>
                     <h3>
-                        <a href="{{ path('event_show', {'id': event.id}) }}">{{ event.name }}</a>
+                        <a href="{{ path('show', {'id': event.id}) }}">{{ event.name }}</a>
                     </h3>
 
                     <dl>
