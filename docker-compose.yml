@@ -1,0 +1,29 @@
+version: "3.1"
+
+services:
+  app:
+    container_name: starpacks
+    build: .docker/php
+    volumes:
+      - .:/app
+      - ./var/logs:/app/var/logs
+      - ./var/cache:/app/var/cache
+
+  nginx:
+    container_name: symfony-nginx
+    build: .docker/nginx
+    ports:
+      - 8000:80
+
+  mysql:
+    image: mysql:5.7
+    container_name: symfony-mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=passwd
+      - MYSQL_DATABASE=starpacks
+    volumes:
+      - symfony-volume:/var/lib/mysql
+volumes:
+  symfony-volume:
