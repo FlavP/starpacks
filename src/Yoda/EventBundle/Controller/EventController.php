@@ -2,6 +2,7 @@
 
 namespace Yoda\EventBundle\Controller;
 
+use Symfony\Component\Finder\Exception\AccessDeniedException;
 use Yoda\EventBundle\Entity\Event;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,8 +23,11 @@ class EventController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
 
+        $em = $this->getDoctrine()->getManager();
+//        $userRepository = $em->getRepository('UserBundle:User');
+//        dump($userRepository->findOneByUsernameOrEmail('user2@deathstar.com'));
+//        die();
         $events = $em->getRepository('EventBundle:Event')->findAll();
 
         return [
@@ -37,6 +41,7 @@ class EventController extends Controller
      */
     public function newAction(Request $request)
     {
+        $this->enforceUserSecurity();
         $event = new Event();
         $form = $this->createForm('Yoda\EventBundle\Form\EventType', $event);
         $form->handleRequest($request);
@@ -46,7 +51,7 @@ class EventController extends Controller
             $em->persist($event);
             $em->flush();
 
-            return $this->redirectToRoute('event_show', array('id' => $event->getId()));
+            return $this->redirectToRoute('show', array('id' => $event->getId()));
         }
 
         return array(
@@ -61,6 +66,7 @@ class EventController extends Controller
      */
     public function showAction(Event $event)
     {
+        $this->enforceUserSecurity();
         $deleteForm = $this->createDeleteForm($event);
 
         return array(
@@ -75,6 +81,7 @@ class EventController extends Controller
      */
     public function editAction(Request $request, Event $event)
     {
+        $this->enforceUserSecurity();
         $deleteForm = $this->createDeleteForm($event);
         $editForm = $this->createForm('Yoda\EventBundle\Form\EventType', $event);
         $editForm->handleRequest($request);
@@ -82,7 +89,7 @@ class EventController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
+            return $this->redirectToRoute('edit', array('id' => $event->getId()));
         }
 
         return array(
@@ -97,6 +104,7 @@ class EventController extends Controller
      */
     public function deleteAction(Request $request, Event $event)
     {
+        $this->enforceUserSecurity();
         $form = $this->createDeleteForm($event);
         $form->handleRequest($request);
 
@@ -118,10 +126,18 @@ class EventController extends Controller
      */
     private function createDeleteForm(Event $event)
     {
+        $this->enforceUserSecurity();
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('event_delete', array('id' => $event->getId())))
+            ->setAction($this->generateUrl('delete', array('id' => $event->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function enforceUserSecurity(){
+        $securityContext = $this->get('security.context');
+        if(!$securityContext->isGranted('ROLE_USER')){
+            throw $this->createAccessDeniedException('Need to be an Authenticated User');
+        }
     }
 }

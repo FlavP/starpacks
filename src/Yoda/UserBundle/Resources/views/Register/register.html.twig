@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('bundles/user/css/login.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <section class="login">
+        <article>
+            <h1>Register</h1>
+            <form action="{{ path('register_user') }}" method="POST">
+                {{ form_errors(form) }}
+
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.password) }}
+
+                {{ form_rest(form) }}
+                <input type="submit" value="Register!" class="btn btn-primary float-right">
+            </form>
+        </article>
+    </section>
+{% endblock %}
