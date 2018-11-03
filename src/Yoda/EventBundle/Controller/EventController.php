@@ -41,7 +41,7 @@ class EventController extends Controller
      */
     public function newAction(Request $request)
     {
-        $this->enforceUserSecurity();
+        $this->enforceUserSecurity('ROLE_EVENT_CREATE');
         $event = new Event();
         $form = $this->createForm('Yoda\EventBundle\Form\EventType', $event);
         $form->handleRequest($request);
@@ -66,7 +66,6 @@ class EventController extends Controller
      */
     public function showAction(Event $event)
     {
-        $this->enforceUserSecurity();
         $deleteForm = $this->createDeleteForm($event);
 
         return array(
@@ -81,7 +80,7 @@ class EventController extends Controller
      */
     public function editAction(Request $request, Event $event)
     {
-        $this->enforceUserSecurity();
+        $this->enforceUserSecurity('ROLE_EVENT_CREATE');
         $deleteForm = $this->createDeleteForm($event);
         $editForm = $this->createForm('Yoda\EventBundle\Form\EventType', $event);
         $editForm->handleRequest($request);
@@ -137,7 +136,7 @@ class EventController extends Controller
     public function enforceUserSecurity(){
         $securityContext = $this->get('security.context');
         if(!$securityContext->isGranted('ROLE_USER')){
-            throw $this->createAccessDeniedException('Need to be an Authenticated User');
+            throw $this->createAccessDeniedException('Need different authentication');
         }
     }
 }

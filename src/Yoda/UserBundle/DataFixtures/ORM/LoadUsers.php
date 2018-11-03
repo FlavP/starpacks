@@ -27,7 +27,7 @@ class LoadUsers implements FixtureInterface, ContainerAwareInterface
         $user2 = new User();
         $user2->setUsername('yoloadmin');
         $user2->setPassword($this->encondePassword($user2, 'adminadmin'));
-        $user2->setRoles(array('USER_ADMIN'));
+        $user2->setRoles(array('ROLE_ADMIN'));
         $user2->setEmail('user2@deathstar.com');
 //        $user2->setIsActive(false);
         $manager->persist($user2);

@@ -10,13 +10,17 @@
     <section class="login">
         <article>
             <h1>Register</h1>
-            <form action="{{ path('register_user') }}" method="POST">
+            <form action="{{ path('register_user') }}" method="POST" novalidate="novalidate">
                 {{ form_errors(form) }}
 
                 {{ form_row(form.username) }}
                 {{ form_row(form.email) }}
-                {{ form_row(form.password) }}
-
+                {{ form_row(form.plainPassword.first, {
+                    'label' : 'Password'
+                })}}
+                {{ form_row(form.plainPassword.second, {
+                    'label' : 'Repeat Password'
+                })}}
                 {{ form_rest(form) }}
                 <input type="submit" value="Register!" class="btn btn-primary float-right">
             </form>

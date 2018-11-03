@@ -16,4 +16,5 @@ logout:
 
 login_check:
     pattern:   /login_check
+    defaults:  { _controller: UserBundle:Security:loginCheck }
 
