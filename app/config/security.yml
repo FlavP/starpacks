@@ -24,14 +24,19 @@ security:
                 target: event   # redirect to home page after logout
             anonymous: ~
             switch_user: ~
+            remember_me:
+                key:    "Secret"
 #            http_basic:
 #                realm: "Secured Demo Area"
         # disables authentication for assets and the profiler, adapt it according to your needs
         main:
             anonymous: ~
     access_control:
-#        - { path: ^/new, roles: ROLE_USER }
-#        - { path: ^/create, roles: ROLE_USER }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(css|js), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(_wdt|_profiler), roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_USER }
 
             # activate different ways to authenticate
 

@@ -23,7 +23,8 @@ class EventController extends Controller
      */
     public function indexAction()
     {
-
+//        $user = $this->container->get('security.context')->getToken()->getUser();
+        $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
 //        $userRepository = $em->getRepository('UserBundle:User');
 //        dump($userRepository->findOneByUsernameOrEmail('user2@deathstar.com'));
@@ -103,7 +104,7 @@ class EventController extends Controller
      */
     public function deleteAction(Request $request, Event $event)
     {
-        $this->enforceUserSecurity();
+        $this->enforceUserSecurity('ROLE_EVENT_CREATE');
         $form = $this->createDeleteForm($event);
         $form->handleRequest($request);
 
@@ -125,7 +126,7 @@ class EventController extends Controller
      */
     private function createDeleteForm(Event $event)
     {
-        $this->enforceUserSecurity();
+        $this->enforceUserSecurity('ROLE_EVENT_CREATE');
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('delete', array('id' => $event->getId())))
             ->setMethod('DELETE')
@@ -133,10 +134,10 @@ class EventController extends Controller
         ;
     }
 
-    public function enforceUserSecurity(){
+    public function enforceUserSecurity($user){
         $securityContext = $this->get('security.context');
-        if(!$securityContext->isGranted('ROLE_USER')){
-            throw $this->createAccessDeniedException('Need different authentication');
+        if(!$securityContext->isGranted($user)){
+            throw $this->createAccessDeniedException('Need ' . $user);
         }
     }
 }

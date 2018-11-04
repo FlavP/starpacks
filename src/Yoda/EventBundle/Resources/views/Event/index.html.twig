@@ -6,7 +6,7 @@
         <header id="menu">
             <a class="button" href="{{ path('new') }}">Create new event</a>
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <a class="button" href="{{ path('logout') }}">Log Out</a>
+                <a class="link" href="{{ path('logout') }}">Log Out {{ app.user.username }}</a>
             {% else %}
                 <a class="link" href="/login">Log In</a>
             {% endif %}
