@@ -25,12 +25,13 @@ class EventController extends Controller
     public function indexAction()
     {
 //        $user = $this->container->get('security.context')->getToken()->getUser();
-        $user = $this->getUser();
+//        $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
 //        $userRepository = $em->getRepository('UserBundle:User');
 //        dump($userRepository->findOneByUsernameOrEmail('user2@deathstar.com'));
 //        die();
-        $events = $em->getRepository('EventBundle:Event')->findAll();
+        $events = $em->getRepository('EventBundle:Event')->getUpcominEvents();
+
 
         return [
             'events' => $events
@@ -177,6 +178,48 @@ class EventController extends Controller
         }
 
         return $this->redirect($this->generateUrl('event'));
+    }
+
+    /**
+     * @param $id
+     * @Route("/{id}/attend", name="attend")
+     */
+    public function attendAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $event = $em->getRepository('EventBundle:Event')->find($id);
+        if(!$event){
+            throw $this->createNotFoundException('Unable to find Event entity.');
+        }
+        if(!$event->hasAttendee($this->getUser())){
+            $event->getAttendees()->add($this->getUser());
+        }
+        $em->persist($event);
+        $em->flush();
+        $url = $this->generateUrl('show', [
+            'slug' => $event->getSlug(),
+        ]);
+        return $this->redirect($url);
+    }
+
+    /**
+     * @param $id
+     * @Route("/{id}/unattend", name="unattend")
+     */
+    public function unattendAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $event = $em->getRepository('EventBundle:Event')->find($id);
+        if(!$event){
+            throw $this->createNotFoundException('Unable to find Event entity.');
+        }
+        if($event->hasAttendee($this->getUser())){
+            $event->getAttendees()->removeElement($this->getUser());
+        }
+        $em->persist($event);
+        $em->flush();
+        $url = $this->generateUrl('show', [
+            'slug' => $event->getSlug(),
+        ]);
+        return $this->redirect($url);
     }
 
     public function enforceUserSecurity($role = 'ROLE_USER'){

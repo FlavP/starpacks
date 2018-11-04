@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/EventController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Entity/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Entity/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Repository/EventRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Repository/EventRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig" afterDir="false" />
@@ -71,10 +72,10 @@
           <entry key="gitignore" value="1" />
           <entry key="ico" value="2" />
           <entry key="json" value="4" />
-          <entry key="php" value="63" />
+          <entry key="php" value="65" />
           <entry key="png" value="2" />
           <entry key="sql" value="1" />
-          <entry key="twig" value="38" />
+          <entry key="twig" value="40" />
           <entry key="yml" value="52" />
           <entry key="yoga_event" value="3" />
         </counts>
@@ -86,11 +87,11 @@
           <entry key="Dockerfile" value="6" />
           <entry key="Image" value="4" />
           <entry key="JSON" value="4" />
-          <entry key="PHP" value="63" />
+          <entry key="PHP" value="65" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Scratch" value="1" />
           <entry key="SmartyConfig" value="4" />
-          <entry key="Twig" value="38" />
+          <entry key="Twig" value="40" />
           <entry key="XML" value="2" />
           <entry key="YAML" value="52" />
         </counts>
@@ -103,10 +104,10 @@
           <entry key="dist" value="9" />
           <entry key="dummy" value="5" />
           <entry key="json" value="158" />
-          <entry key="php" value="7918" />
-          <entry key="twig" value="1566" />
+          <entry key="php" value="8668" />
+          <entry key="twig" value="1937" />
           <entry key="txt" value="18" />
-          <entry key="yml" value="1511" />
+          <entry key="yml" value="1531" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -114,12 +115,12 @@
           <entry key="CSS" value="124" />
           <entry key="Dockerfile" value="20" />
           <entry key="JSON" value="158" />
-          <entry key="PHP" value="7918" />
+          <entry key="PHP" value="8668" />
           <entry key="PLAIN_TEXT" value="23" />
           <entry key="SmartyConfig" value="25" />
-          <entry key="Twig" value="1566" />
+          <entry key="Twig" value="1937" />
           <entry key="XML" value="9" />
-          <entry key="YAML" value="1511" />
+          <entry key="YAML" value="1531" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -134,11 +135,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Entity/Event.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+            <state relative-caret-position="468">
+              <caret line="254" column="30" lean-forward="true" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
               <folding>
-                <element signature="e#43#75#0#PHP" expanded="true" />
+                <element signature="e#43#91#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Yoda/UserBundle/Entity/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="244" column="53" lean-forward="true" selection-start-line="244" selection-start-column="53" selection-end-line="244" selection-end-column="53" />
+              <folding>
+                <element signature="e#42#90#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -146,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Controller/EventController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
+            <state relative-caret-position="511">
+              <caret line="214" selection-start-line="214" selection-end-line="214" />
               <folding>
                 <element signature="e#47#85#0#PHP" expanded="true" />
                 <element signature="e#984#1003#1#PHP" expanded="true" />
@@ -162,6 +184,10 @@
                 <element signature="e#4387#4421#0#PHP" expanded="true" />
                 <element signature="e#4861#4880#1#PHP" expanded="true" />
                 <element signature="e#5295#5302#1#PHP" expanded="true" />
+                <element signature="e#5623#5642#1#PHP" expanded="true" />
+                <element signature="e#5919#5925#1#PHP" expanded="true" />
+                <element signature="e#6295#6314#1#PHP" expanded="true" />
+                <element signature="e#6647#6653#0#PHP" expanded="true" />
                 <element signature="e#6124#6132#1#PHP" expanded="true" />
                 <element signature="e#6608#6616#0#PHP" expanded="true" />
                 <element signature="e#7109#7117#0#PHP" expanded="true" />
@@ -170,48 +196,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
-              <folding>
-                <element signature="e#267#271#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Controller/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="e#42#117#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+            <state relative-caret-position="393">
+              <caret line="41" column="69" lean-forward="true" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
               <folding>
                 <element signature="e#168#173#0#Twig" expanded="true" />
-                <element signature="e#180#186#0#HTML" expanded="true" />
+                <element signature="e#1828#1836#0#Twig" expanded="true" />
+                <element signature="e#2046#2052#0#Twig" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Repository/EventRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -223,18 +226,6 @@
               <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="e#47#104#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Yoda/UserBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="271" column="24" selection-start-line="271" selection-start-column="24" selection-end-line="271" selection-end-column="24" />
-              <folding>
-                <element signature="e#42#90#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -255,8 +246,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+            <state relative-caret-position="589">
+              <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -276,9 +267,10 @@
       <find>serialize</find>
       <find>seria</find>
       <find>securityco</find>
-      <find>inve</find>
       <find>show</find>
       <find>owner</find>
+      <find>set</find>
+      <find>inve</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/config</dir>
@@ -326,14 +318,15 @@
         <option value="$PROJECT_DIR$/src/Yoda/UserBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/Yoda/UserBundle/Controller/RegisterController.php" />
         <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/Controller.php" />
-        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/Yoda/UserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Entity/Event.php" />
         <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/EventController.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Repository/EventRepository.php" />
+        <option value="$PROJECT_DIR$/src/Yoda/UserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Entity/Event.php" />
+        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Controller/EventController.php" />
+        <option value="$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig" />
       </list>
     </option>
   </component>
@@ -494,7 +487,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="index&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/index.html.twig&#10;edit&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig&#10;confi&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/config.yml&#10;App&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/AppKernel.php&#10;eve&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Entity/Event.php&#10;User&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Entity/User.php&#10;sh&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/show.html.twig&#10;UserR&#9;null&#9;null&#10;load&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/DataFixtures/ORM/LoadEvents.php&#10;Load&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/DataFixtures/ORM/LoadUsers.php&#10;register.h&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Resources/views/Register/register.html.twig&#10;new&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/new.html.twig&#10;Ev&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/EventController.php&#10;Eve&#9;null&#9;null&#10;logi&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Resources/views/Security/login.html.twig&#10;Even&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/EventController.php&#10;inde&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/index.html.twig&#10;secu&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/security.yml&#10;base&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/Resources/views/base.html.twig&#10;RegisterC&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Tests/RegisterControllerTest.php&#10;rout&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/routing.yml&#10;sec&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/security.yml&#10;conf&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/config.yml&#10;phpunit.&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/phpunit.xml.dist&#10;ba&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/Resources/views/base.html.twig&#10;se&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/security.yml&#10;event&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/config/routing/event.yml&#10;rou&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/routing.yml&#10;event.y&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/config/routing/event.yml&#10;app&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/AppKernel.php&#10;compo&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/composer.json&#10;config.y&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/config.yml&#10;doc&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/docker-compose.yml&#10;bas&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/Resources/views/base.html.twig&#10;par&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/parameters.yml&#10;compos&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/composer.json&#10;De&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/DefaultController.php&#10;app_de&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/web/app_dev.php&#10;Controller.p&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/DefaultController.php" />
+    <property name="SearchEverywhereHistoryKey" value="ind&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/index.html.twig&#10;Us&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Entity/User.php&#10;sh&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/show.html.twig&#10;eventre&#9;null&#9;null&#10;index&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/index.html.twig&#10;edit&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig&#10;confi&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/config.yml&#10;App&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/AppKernel.php&#10;eve&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Entity/Event.php&#10;User&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Entity/User.php&#10;UserR&#9;null&#9;null&#10;load&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/DataFixtures/ORM/LoadEvents.php&#10;Load&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/DataFixtures/ORM/LoadUsers.php&#10;register.h&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Resources/views/Register/register.html.twig&#10;new&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/new.html.twig&#10;Ev&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/EventController.php&#10;Eve&#9;null&#9;null&#10;logi&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Resources/views/Security/login.html.twig&#10;Even&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/EventController.php&#10;inde&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/views/Event/index.html.twig&#10;secu&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/security.yml&#10;base&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/Resources/views/base.html.twig&#10;RegisterC&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/UserBundle/Tests/RegisterControllerTest.php&#10;rout&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/routing.yml&#10;sec&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/security.yml&#10;conf&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/config.yml&#10;phpunit.&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/phpunit.xml.dist&#10;ba&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/Resources/views/base.html.twig&#10;se&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/security.yml&#10;event&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/config/routing/event.yml&#10;rou&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/routing.yml&#10;event.y&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Resources/config/routing/event.yml&#10;app&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/AppKernel.php&#10;compo&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/composer.json&#10;config.y&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/config.yml&#10;doc&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/docker-compose.yml&#10;bas&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/Resources/views/base.html.twig&#10;par&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/app/config/parameters.yml&#10;compos&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/composer.json&#10;De&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/DefaultController.php&#10;app_de&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/web/app_dev.php&#10;Controller.p&#9;FILE&#9;file:///home/flavius/Documents/projects/symfonytuts/starpacks/src/Yoda/EventBundle/Controller/DefaultController.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -543,12 +536,12 @@
       <workItem from="1541231619488" duration="19212000" />
       <workItem from="1541260843669" duration="3958000" />
       <workItem from="1541316471409" duration="5104000" />
-      <workItem from="1541334569128" duration="6325000" />
+      <workItem from="1541334569128" duration="10803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76488000" />
+    <option name="totallyTimeSpent" value="80966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -583,9 +576,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/public/images/bg.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.docker/nginx/conf/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -866,33 +856,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="48" lean-forward="true" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-          <folding>
-            <element signature="e#168#173#0#Twig" expanded="true" />
-            <element signature="e#180#186#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Yoda/UserBundle/DataFixtures/ORM/LoadUsers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="e#47#104#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Yoda/UserBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="271" column="24" selection-start-line="271" selection-start-column="24" selection-end-line="271" selection-end-column="24" />
-          <folding>
-            <element signature="e#42#90#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -907,27 +876,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+          <folding>
+            <element signature="e#267#271#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
+        <state relative-caret-position="589">
+          <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Repository/EventRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Yoda/UserBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="244" column="53" lean-forward="true" selection-start-line="244" selection-start-column="53" selection-end-line="244" selection-end-column="53" />
+          <folding>
+            <element signature="e#42#90#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Entity/Event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+        <state relative-caret-position="468">
+          <caret line="254" column="30" lean-forward="true" selection-start-line="254" selection-start-column="30" selection-end-line="254" selection-end-column="30" />
           <folding>
-            <element signature="e#43#75#0#PHP" expanded="true" />
+            <element signature="e#43#91#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="68" selection-start-line="32" selection-start-column="68" selection-end-line="32" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Controller/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="37" selection-end-line="87" selection-end-column="37" />
+        <state relative-caret-position="511">
+          <caret line="214" selection-start-line="214" selection-end-line="214" />
           <folding>
             <element signature="e#47#85#0#PHP" expanded="true" />
             <element signature="e#984#1003#1#PHP" expanded="true" />
@@ -942,6 +945,10 @@
             <element signature="e#4387#4421#0#PHP" expanded="true" />
             <element signature="e#4861#4880#1#PHP" expanded="true" />
             <element signature="e#5295#5302#1#PHP" expanded="true" />
+            <element signature="e#5623#5642#1#PHP" expanded="true" />
+            <element signature="e#5919#5925#1#PHP" expanded="true" />
+            <element signature="e#6295#6314#1#PHP" expanded="true" />
+            <element signature="e#6647#6653#0#PHP" expanded="true" />
             <element signature="e#6124#6132#1#PHP" expanded="true" />
             <element signature="e#6608#6616#0#PHP" expanded="true" />
             <element signature="e#7109#7117#0#PHP" expanded="true" />
@@ -949,20 +956,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+        <state relative-caret-position="393">
+          <caret line="41" column="69" lean-forward="true" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
           <folding>
-            <element signature="e#267#271#0#Twig" expanded="true" />
+            <element signature="e#168#173#0#Twig" expanded="true" />
+            <element signature="e#1828#1836#0#Twig" expanded="true" />
+            <element signature="e#2046#2052#0#Twig" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Yoda/EventBundle/Resources/views/Event/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
         </state>
       </provider>
     </entry>

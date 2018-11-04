@@ -270,5 +270,10 @@ class User implements AdvancedUserInterface, \Serializable
     }
 
 //  setEvents is ignored
+
+    public function __toString()
+    {
+        return (string)$this->getUsername();
+    }
 }
 

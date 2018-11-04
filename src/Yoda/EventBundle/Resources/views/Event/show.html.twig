@@ -34,9 +34,25 @@
 
                     <dt>who:</dt>
                     <dd>
+                        {{ event.attendees|length }} attending
                         <ul class="users">
-                            <li>nobody yet!</li>
+                            {% for attendee in event.attendees %}
+                                <li>{{ attendee }}</li>
+                            {% else %}
+                                <li>Someone will come eventually</li>
+                            {% endfor %}
                         </ul>
+
+                        {% if event.hasAttendee(app.user) %}
+                        <a class="btn btn-warning btn-xs" href="{{ path('unattend', { id: event.id }) }}">
+                            I changed my mind...
+                        </a>
+                        {% else %}
+                        <a class="btn btn-success btn-xs" href="{{ path('attend', { id: event.id }) }}">
+                            I want to attend!
+                        </a>
+                        {% endif %}
+
                     </dd>
                 </dl>
             </section>
