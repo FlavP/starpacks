@@ -2,6 +2,7 @@
 
 namespace UserBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -9,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Yoda\UserBundle\Entity\User;
 
 
-class LoadUsers implements FixtureInterface, ContainerAwareInterface
+class LoadUsers implements FixtureInterface, ContainerAwareInterface, OrderedFixtureInterface
 {
     /**
      * @var ContainerInterface
@@ -44,4 +45,11 @@ class LoadUsers implements FixtureInterface, ContainerAwareInterface
     {
         $this->container = $container;
     }
+
+    public function getOrder()
+    {
+        return 10;
+    }
+
+
 }

@@ -2,14 +2,17 @@
 
 namespace EventBundle\DataFixtures\ORM;
 
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Yoda\EventBundle\Entity\Event;
 
-class LoadUserData implements FixtureInterface
+class LoadUserData implements FixtureInterface, OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
+        $yoloAdmin = $manager->getRepository('UserBundle:User')
+            ->loadUserByUsername('yoloadmin');
         $event1 = new Event();
         $event1->setName('O zi frumoasa cu soare');
         $event1->setLocation('Afara');
@@ -23,6 +26,14 @@ class LoadUserData implements FixtureInterface
         $event2->setTime(new \DateTime('tomorrow noon'));
         $event2->setDetails('yaaay');
         $manager->persist($event2);
+
+        $event1->setOwner($yoloAdmin);
+        $event2->setOwner($yoloAdmin);
         $manager->flush();
+    }
+
+     public function getOrder()
+    {
+        return 20;
     }
 }
