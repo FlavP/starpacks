@@ -72,3 +72,8 @@ assetic:
     write_to: '%kernel.root_dir%/../web'
     filters:
         cssrewrite: ~
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
