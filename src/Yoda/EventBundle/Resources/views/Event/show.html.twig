@@ -44,11 +44,11 @@
                         </ul>
 
                         {% if event.hasAttendee(app.user) %}
-                        <a class="btn btn-warning btn-xs" href="{{ path('unattend', { id: event.id }) }}">
+                        <a class="btn btn-warning btn-xs js-attend-toggle" href="{{ path('unattend', { id: event.id }) }}">
                             I changed my mind...
                         </a>
                         {% else %}
-                        <a class="btn btn-success btn-xs" href="{{ path('attend', { id: event.id }) }}">
+                        <a class="btn btn-success btn-xs js-attend-toggle" href="{{ path('attend', { id: event.id }) }}">
                             I want to attend!
                         </a>
                         {% endif %}
@@ -58,4 +58,29 @@
             </section>
         </article>
     </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function () {
+            $('.js-attend-toggle').on('click', function (e) {
+                e.preventDefault();
+                var $this = $(this);
+                var url = $(this).attr('href') + '.json';
+                var message = '';
+
+                $.post(url, function (data) {
+                    if(data.attending){
+                        message = 'Glad you\'re coming';
+                    } else {
+                        message = 'Sorry you can\'t make it';
+                    }
+                    $this.after('<span class="label label-default">&#10004;' + message + '</span>');
+                    $this.hide();
+                });
+                return false;
+            });
+        });
+    </script>
 {% endblock %}

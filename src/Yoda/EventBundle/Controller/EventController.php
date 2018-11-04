@@ -4,6 +4,8 @@ namespace Yoda\EventBundle\Controller;
 
 use EventBundle\Controller\Controller;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Yoda\EventBundle\Entity\Event;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -182,9 +184,15 @@ class EventController extends Controller
 
     /**
      * @param $id
-     * @Route("/{id}/attend", name="attend")
+     * @Route(
+     *     "/{id}/attend.{_format}", name="attend",
+     *     defaults={"_format": "html"},
+     *     requirements={
+     *     "_format": "html|json"
+     *       }
+     * )
      */
-    public function attendAction($id){
+    public function attendAction($id, $_format){
         $em = $this->getDoctrine()->getManager();
         $event = $em->getRepository('EventBundle:Event')->find($id);
         if(!$event){
@@ -195,17 +203,20 @@ class EventController extends Controller
         }
         $em->persist($event);
         $em->flush();
-        $url = $this->generateUrl('show', [
-            'slug' => $event->getSlug(),
-        ]);
-        return $this->redirect($url);
+        return $this->createAttendingResponse($event, $_format);
     }
 
     /**
      * @param $id
-     * @Route("/{id}/unattend", name="unattend")
+     * @Route(
+     *     "/{id}/unattend.{_format}", name="unattend",
+     *     defaults={"_format": "html"},
+     *     requirements={
+     *     "_format": "html|json"
+     *       }
+     * )
      */
-    public function unattendAction($id){
+    public function unattendAction($id, $_format){
         $em = $this->getDoctrine()->getManager();
         $event = $em->getRepository('EventBundle:Event')->find($id);
         if(!$event){
@@ -216,6 +227,17 @@ class EventController extends Controller
         }
         $em->persist($event);
         $em->flush();
+        return $this->createAttendingResponse($event, $_format);
+    }
+
+    private function createAttendingResponse(Event $event, $format){
+        if($format == 'json') {
+            $data = [
+                'attending' => $event->hasAttendee($this->getUser()),
+            ];
+            $response = new JsonResponse($data);
+            return $response;
+        }
         $url = $this->generateUrl('show', [
             'slug' => $event->getSlug(),
         ]);
