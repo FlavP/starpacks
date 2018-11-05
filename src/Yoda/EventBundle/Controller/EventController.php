@@ -35,9 +35,7 @@ class EventController extends Controller
         $events = $em->getRepository('EventBundle:Event')->getUpcominEvents();
 
 
-        return [
-            'events' => $events
-        ];
+        return [];
     }
 
     /**
@@ -65,6 +63,15 @@ class EventController extends Controller
             'event' => $event,
             'form'   => $form->createView(),
         ));
+    }
+
+    public function _upcomingEventsAction($max = null){
+        $em = $this->getDoctrine()->getManager();
+        $events = $em->getRepository('EventBundle:Event')
+            ->getUpcominEvents($max);
+        return $this->render('EventBundle:Event:_upcomig.html.twig', [
+            'events' => $events,
+        ]);
     }
 
     /**
