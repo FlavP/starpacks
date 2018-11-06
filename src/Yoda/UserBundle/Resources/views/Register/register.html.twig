@@ -13,7 +13,10 @@
             <form action="{{ path('register_user') }}" method="POST" novalidate="novalidate">
                 {{ form_errors(form) }}
 
-                {{ form_row(form.username) }}
+                {{ form_row(form.username, {
+                    'attr': { 'class':'some-class'},
+                    'help_variable': 'Choose a funny username'
+                }) }}
                 {{ form_row(form.email) }}
                 {{ form_row(form.plainPassword.first, {
                     'label' : 'Password'

@@ -10,6 +10,7 @@ class DefaultController extends Controller
     public function indexAction($name, $count)
     {
 //        $em = $this->container->get('doctrine')->getManager();
+//        $this->container->getParameter('our_assets_version');
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository('EventBundle:Event');
         $event = $repo->findOneBy([

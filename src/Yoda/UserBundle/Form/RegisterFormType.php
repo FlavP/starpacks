@@ -5,6 +5,8 @@ namespace Yoda\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class RegisterFormType extends AbstractType
@@ -28,6 +30,11 @@ class RegisterFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => 'Yoda\UserBundle\Entity\User',
         ]);
+    }
+
+    public function finishView(FormView $view, FormInterface $form, array $options)
+    {
+        $view['email']->vars['help_variable'] = 'Hint it should have an @ symbol';
     }
 
     public function getName()
