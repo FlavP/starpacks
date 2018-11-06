@@ -1,7 +1,13 @@
 services:
   event_report_manager:
     class: EventBundle\Services\EventReportManager
-    arguments: [@doctrine.orm.entity_manager]
+    arguments: [@doctrine.orm.entity_manager, @router]
+
+  twig.event_extension:
+    class: EventBundle\Twig\EventExtension
+    arguments: []
+    tags:
+      - { name: twig.extension }
 #    event.example:
 #        class: Yoda\EventBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]

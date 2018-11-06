@@ -3,15 +3,18 @@
 namespace EventBundle\Services;
 
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Routing\Router;
 
 
 class EventReportManager
 {
     private $em;
+    private $router;
 
-    public function __construct(EntityManager $em)
+    public function __construct(EntityManager $em, Router $router)
     {
         $this->em = $em;
+        $this->router = $router;
     }
 
     public function getRecentlyCreated(){
@@ -22,7 +25,12 @@ class EventReportManager
             $data = [
                 $event->getId(),
                 $event->getName(),
-                $event->getTime()->format('Y-m-d H:i:s')
+                $event->getTime()->format('Y-m-d H:i:s'),
+                $this->router->generate(
+                'show', [
+                'slug' => $event->getSlug(),
+                ],
+                true)
             ];
             $rows[] = implode(', ', $data);
         }

@@ -12,6 +12,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @ORM\Table(name="yoga_event")
  * @ORM\Entity(repositoryClass="Yoda\EventBundle\Repository\EventRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Event
 {
@@ -78,7 +79,6 @@ class Event
 
     /**
      *
-     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
@@ -261,6 +261,17 @@ class Event
 
     public function hasAttendee(User $user){
         return $this->getAttendees()->contains($user);
+    }
+
+    /**
+     * @ORM\PrePersist()
+     */
+    public function prePersist(){
+        // easy to setup
+        // don't have access to any services :((
+        if(!$this->getCreatedAt()){
+            $this->createdAt = new \DateTime();
+        }
     }
 }
 

@@ -18,18 +18,23 @@ $container = $kernel->getContainer();
 $container->enterScope('request');
 $container->set('request', $request);
 
-$templating = $container->get('templating');
+//$templating = $container->get('templating');
 
 use Yoda\EventBundle\Entity\Event;
+use Yoda\UserBundle\Entity\User;
 
-$event = new Event();
-$event->setName('Happy Birthday');
-$event->setLocation('Acasa');
-$event->setTime(new DateTime('tomorrow'));
-$event->setDetails('Yaaaaay');
+//$event = new Event();
+//$event->setName('Happy Birthday');
+//$event->setLocation('Acasa');
+//$event->setTime(new DateTime('tomorrow'));
+//$event->setDetails('Yaaaaay');
 
-$en = $container->get('doctrine')->getManager();
+$em = $container->get('doctrine')->getManager();
 
-$en->persist($event);
+$yolo = $em->getRepository('UserBundle:User')->loadUserByUsername('yolo');
 
-$en->flush();
+$yolo->setPlainPassword('swagger');
+
+$em->persist($yolo);
+
+$em->flush();
